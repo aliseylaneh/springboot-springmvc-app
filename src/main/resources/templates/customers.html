@@ -16,7 +16,8 @@
 <div class="container">
     <div th:if="${not #lists.isEmpty(customers)}">
         <h2>Customer List</h2>
-        <table class="table table-dark">
+        <table class="table table-dark"
+               style="background-color: #34465d;color: aliceblue;padding: 20px">
             <tr>
                 <td>Id</td>
                 <td>Fist Name</td>
@@ -24,24 +25,30 @@
                 <td>City</td>
                 <td>Address Line One</td>
                 <td>Address Line Two</td>
-                <td>City</td>
-                <td>Zip Code</td>
                 <td>Phone Number</td>
+                <td>Zip Code</td>
+                <td>Edit</td>
+                <td>View</td>
+                <td>Delete</td>
 
             </tr>
-            <tr th:each="customer:${customers}">
+            <tr th:each="customer : ${customers}">
                 <td th:text="${customer.id}"></td>
                 <td th:text="${customer.firstName}"></td>
                 <td th:text="${customer.lastName}"></td>
                 <td th:text="${customer.city}"></td>
                 <td th:text="${customer.addressLineOne}"></td>
                 <td th:text="${customer.addressLineTwo}"></td>
-                <td th:text="${customer.zipCode}"></td>
                 <td th:text="${customer.phoneNumber}"></td>
+                <td th:text="${customer.zipCode}"></td>
+                <td><a th:href="${'/customer/edit/'+customer.id}">Edit</a></td>
+                <td><a th:href="${'/customer/'+customer.id}">View</a></td>
+                <td><a th:href="${'/customer/delete/'+customer.id}">Delete</a></td>
             </tr>
         </table>
         <div>
-            <button class="btn btn-danger" onclick="window.location.href=''" type="button">New Customer</button>
+            <button class="btn btn-danger" onclick="window.location.href='/customer/new'" type="button">New Customer
+            </button>
 
         </div>
     </div>

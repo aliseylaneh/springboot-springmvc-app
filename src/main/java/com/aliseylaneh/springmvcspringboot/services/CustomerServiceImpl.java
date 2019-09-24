@@ -76,7 +76,7 @@ public class CustomerServiceImpl implements CustomerService {
         customer3.setCity("Calgray");
         customer3.setZipCode("890067");
         Customer customer4 = new Customer();
-        customer4.setId(1);
+        customer4.setId(4);
         customer4.setFirstName("Alita");
         customer4.setLastName("Tompson");
         customer4.setPhoneNumber("01-555-4564");
@@ -93,5 +93,11 @@ public class CustomerServiceImpl implements CustomerService {
         customer5.setAddressLineTwo("Alley 2, Street 5");
         customer5.setCity("West Virgina");
         customer5.setZipCode("688767");
+        customers.put(1, customer1);
+        customers.put(2, customer2);
+        customers.put(3, customer3);
+        customers.put(4, customer4);
+        customers.put(5, customer5);
+
     }
 }
