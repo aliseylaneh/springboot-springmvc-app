@@ -1,9 +1,11 @@
 package com.aliseylaneh.springmvcspringboot.services;
 
 import com.aliseylaneh.springmvcspringboot.domain.Customer;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
     private Map<Integer, Customer> customers;
 
@@ -12,7 +14,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public List<Customer> listAllCustomer() {
+    public List<Customer> listAllCustomers() {
         return new ArrayList<>(customers.values());
     }
 
