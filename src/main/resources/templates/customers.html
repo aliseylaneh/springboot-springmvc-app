@@ -29,7 +29,15 @@
                 <td>Phone Number</td>
 
             </tr>
-            <tr>
+            <tr th:each="customer:${customers}">
+                <td th:text="${customer.id}"></td>
+                <td th:text="${customer.firstName}"></td>
+                <td th:text="${customer.lastName}"></td>
+                <td th:text="${customer.city}"></td>
+                <td th:text="${customer.addressLineOne}"></td>
+                <td th:text="${customer.addressLineTwo}"></td>
+                <td th:text="${customer.zipCode}"></td>
+                <td th:text="${customer.phoneNumber}"></td>
             </tr>
         </table>
         <div>
