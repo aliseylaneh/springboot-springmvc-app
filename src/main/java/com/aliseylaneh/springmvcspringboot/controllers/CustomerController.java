@@ -21,7 +21,7 @@ public class CustomerController {
     @RequestMapping("/customers")
     public String listCustomers(Model model) {
         model.addAttribute("customers", customerService.listAllCustomers());
-        return "customers";
+        return "list";
     }
 
     @RequestMapping("/customer/{id}")

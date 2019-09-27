@@ -44,7 +44,7 @@ public class CustomerControllerTest {
         when(customerService.listAllCustomers()).thenReturn((List) customers);
         mockMvc.perform(get("/customers"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("customers"))
+                .andExpect(view().name("list"))
                 .andExpect(model().attribute("customers", hasSize(2)));
 
     }
