@@ -21,7 +21,7 @@ public class CustomerController {
     @RequestMapping("/customers")
     public String listCustomers(Model model) {
         model.addAttribute("customers", customerService.listAllCustomers());
-        return "list";
+        return "/customers";
     }
 
     @RequestMapping("/customer/{id}")
@@ -51,8 +51,8 @@ public class CustomerController {
 
     @RequestMapping(value = "/customer", method = RequestMethod.POST)
     public String saveOrUpdateCustomer(Customer customer) {
-        Customer savedCustomer = customerService.saveOrUpdateCustomer(customer);
-        return "redirect:/customer/" + savedCustomer.getId();
+        customerService.saveOrUpdateCustomer(customer);
+        return "redirect:/customers";
 
     }
 
