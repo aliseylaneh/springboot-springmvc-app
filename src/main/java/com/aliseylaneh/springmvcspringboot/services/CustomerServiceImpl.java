@@ -24,12 +24,13 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void saveOrUpdateCustomer(Customer customer) {
+    public Customer saveOrUpdateCustomer(Customer customer) {
         if (customer != null) {
             if (customer.getId() == null) {
                 customer.setId(getNextKey());
             }
             customers.put(customer.getId(), customer);
+            return customer;
         } else {
             throw new RuntimeException("Customer cant be Null");
         }
